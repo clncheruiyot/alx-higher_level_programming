@@ -3,18 +3,18 @@
 #include <listobject.h>
 
 /**
-* print_python_list_info - prints the information about python
+* print_python_list_info - prints informatio about python list
 * @p: python object
 **/
 
 void print_python_list_info(PyObject *p)
 {
 	long int size = PyList_Size(p);
-	int a;
+	int i;
 	PyListObject *obj = (PyListObject *)p;
 
-	printf("[*] Size of Python List = %li\n", size);
+	printf("[*] Size of the Python List = %li\n", size);
 	printf("[*] Allocated = %li\n", obj->allocated);
-	for (a = 0; a < size; a++)
-		printf("Element %a: %s\n", a, Py_TYPE(obj->ob_item[a])->tp_name);
+	for (i = 0; i < size; i++)
+		printf("Element %i: %s\n", i, Py_TYPE(obj->ob_item[i])->tp_name);
 }
